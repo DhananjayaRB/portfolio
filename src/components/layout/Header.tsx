@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/theme/ThemeToggle";
-import ProfileImageExpandable from "@/components/profile/ProfileImageExpandable";
-import { profile, socialLinks } from "@/data/portfolio";
+import { profile, profileImageSrc, socialLinks } from "@/data/portfolio";
 
 const navItems = [
   { id: "about", label: "About" },
@@ -41,12 +41,16 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <div className="flex min-w-0 items-center gap-3">
-          <ProfileImageExpandable
-            alt={`${profile.name} profile`}
-            thumbSizes="40px"
-            thumbClassName="h-10 w-10 rounded-2xl"
-            thumbButtonClassName="bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.35),transparent_60%)]"
-          />
+          <span className="relative inline-flex h-10 w-10 shrink-0 overflow-hidden rounded-2xl ring-1 ring-white/10 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.35),transparent_60%)]">
+            <Image
+              src={profileImageSrc}
+              alt={`${profile.name} profile`}
+              fill
+              sizes="40px"
+              className="object-cover"
+              priority
+            />
+          </span>
           <a href="#top" className="min-w-0">
             <span className="block truncate text-sm font-semibold text-zinc-950 dark:text-zinc-50">
               {brand}

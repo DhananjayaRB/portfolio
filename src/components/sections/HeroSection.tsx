@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
-import ProfileImageExpandable from "@/components/profile/ProfileImageExpandable";
-import { profile, socialLinks } from "@/data/portfolio";
+import { profile, profileImageSrc, socialLinks } from "@/data/portfolio";
 
 const Stat = ({
   label,
@@ -99,12 +99,17 @@ export default function HeroSection() {
 
           <div className="relative rounded-[2.25rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
             <div className="flex items-center gap-4">
-              <ProfileImageExpandable
-                alt={`${profile.name} avatar`}
-                thumbSizes="64px"
-                thumbClassName="h-16 w-16 rounded-3xl"
-                withThumbGradient
-              />
+              <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-3xl ring-1 ring-white/10">
+                <Image
+                  src={profileImageSrc}
+                  alt={`${profile.name} avatar`}
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                  priority
+                />
+                <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.25),transparent_60%)]" />
+              </div>
               <div>
                 <div className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">
                   {profile.title}

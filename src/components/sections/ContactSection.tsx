@@ -137,8 +137,9 @@ export default function ContactSection() {
               </div>
             </a>
             <a
-              href="/api/resume"
-              download
+              href={socialLinks.resumeDownloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-semibold text-zinc-950 backdrop-blur hover:bg-white/10 dark:text-zinc-50"
             >
               <div className="flex items-center gap-2">

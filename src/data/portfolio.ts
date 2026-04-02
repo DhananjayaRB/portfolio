@@ -42,6 +42,12 @@ export const socialLinks = {
   email: "dhananjayarb98@gmail.com",
   phonePrimary: "9071361273",
   phoneSecondary: "8105294450",
+  /** Google Drive viewer (no forced login like uc?export=download). Opens in new tab from UI. */
+  resumeViewUrl:
+    "https://drive.google.com/file/d/1uJVmWlDYOp-40s-kULZ0mb_dSeb4-hkg/view",
+  /** Same as view URL — used by “Resume” buttons site-wide. */
+  resumeDownloadUrl:
+    "https://drive.google.com/file/d/1uJVmWlDYOp-40s-kULZ0mb_dSeb4-hkg/view",
 };
 
 export const experience: ExperienceItem[] = [
@@ -193,7 +199,7 @@ export const skills: SkillGroup[] = [
   },
   {
     title: "AI",
-    skills: ["ChatGPT", "LLMs", "Agents", "Cursor-style workflows"],
+    skills: ["ChatGPT", "LLMs", "Agents","N8N","MCP", "Cursor-style workflows"],
   },
 ];
 

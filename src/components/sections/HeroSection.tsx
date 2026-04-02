@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
-import { profile } from "@/data/portfolio";
+import ProfileImageExpandable from "@/components/profile/ProfileImageExpandable";
+import { profile, socialLinks } from "@/data/portfolio";
 
 const Stat = ({
   label,
@@ -63,9 +64,10 @@ export default function HeroSection() {
             </a>
 
             <a
-              href="/api/resume"
+              href={socialLinks.resumeDownloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-950 shadow-sm backdrop-blur transition hover:bg-white/10 dark:text-zinc-50"
-              download
             >
               <Download className="h-4 w-4" />
               Resume
@@ -97,11 +99,12 @@ export default function HeroSection() {
 
           <div className="relative rounded-[2.25rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
             <div className="flex items-center gap-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.4),transparent_55%)] ring-1 ring-white/10">
-                <span className="text-xl font-extrabold text-indigo-600 dark:text-indigo-300">
-                  DRB
-                </span>
-              </div>
+              <ProfileImageExpandable
+                alt={`${profile.name} avatar`}
+                thumbSizes="64px"
+                thumbClassName="h-16 w-16 rounded-3xl"
+                withThumbGradient
+              />
               <div>
                 <div className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">
                   {profile.title}

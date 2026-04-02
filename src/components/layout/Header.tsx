@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/theme/ThemeToggle";
-import { profile } from "@/data/portfolio";
+import ProfileImageExpandable from "@/components/profile/ProfileImageExpandable";
+import { profile, socialLinks } from "@/data/portfolio";
 
 const navItems = [
   { id: "about", label: "About" },
@@ -39,21 +40,22 @@ export default function Header() {
       ].join(" ")}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <a href="#top" className="flex min-w-0 items-center gap-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.45),transparent_60%)] ring-1 ring-white/10">
-            <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-300">
-              DR
-            </span>
-          </span>
-          <span className="min-w-0">
+        <div className="flex min-w-0 items-center gap-3">
+          <ProfileImageExpandable
+            alt={`${profile.name} profile`}
+            thumbSizes="40px"
+            thumbClassName="h-10 w-10 rounded-2xl"
+            thumbButtonClassName="bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.35),transparent_60%)]"
+          />
+          <a href="#top" className="min-w-0">
             <span className="block truncate text-sm font-semibold text-zinc-950 dark:text-zinc-50">
               {brand}
             </span>
             <span className="block truncate text-xs text-zinc-600 dark:text-zinc-400">
               {profile.title}
             </span>
-          </span>
-        </a>
+          </a>
+        </div>
 
         <nav className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
@@ -75,7 +77,9 @@ export default function Header() {
 
         <div className="flex items-center gap-2 md:hidden">
           <a
-            href="/api/resume"
+            href={socialLinks.resumeDownloadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-zinc-950 backdrop-blur transition dark:text-zinc-50 sm:inline-flex"
           >
             Resume
@@ -115,7 +119,9 @@ export default function Header() {
                   Hire Me
                 </a>
                 <a
-                  href="/api/resume"
+                  href={socialLinks.resumeDownloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center text-sm font-semibold text-zinc-950 backdrop-blur dark:text-zinc-50"
                 >

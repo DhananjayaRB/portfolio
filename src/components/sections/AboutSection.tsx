@@ -3,17 +3,17 @@ import { profile } from "@/data/portfolio";
 
 export default function AboutSection() {
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-16 pt-10">
-      <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+    <div className="mx-auto max-w-6xl px-4 pb-10 pt-2 md:pt-4">
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-zinc-50">
             About Me
           </h2>
-          <p className="mt-4 text-zinc-700 dark:text-zinc-300">
+          <p className="mt-2 text-zinc-700 dark:text-zinc-300">
             {profile.aboutSummary}
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-4 flex flex-wrap gap-3">
             <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-zinc-700 backdrop-blur dark:text-zinc-200">
               {profile.location}
             </span>

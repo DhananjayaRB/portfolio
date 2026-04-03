@@ -26,8 +26,11 @@ const Stat = ({
 
 export default function HeroSection() {
   return (
-    <section id="top" className="relative mx-auto max-w-6xl px-4 pb-6 pt-10">
-      <div className="grid items-center gap-8 lg:grid-cols-2">
+    <section
+      id="top"
+      className="relative mx-auto max-w-6xl px-4 pb-0 pt-1 md:pt-3 md:pb-2"
+    >
+      <div className="grid items-start gap-4 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,14 +43,14 @@ export default function HeroSection() {
             </span>
           </div>
 
-          <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-zinc-950 sm:text-5xl dark:text-zinc-50">
+          <h1 className="mt-3 text-4xl font-extrabold leading-tight tracking-tight text-zinc-950 sm:text-5xl dark:text-zinc-50">
             {profile.name}
           </h1>
-          <p className="mt-3 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p className="mt-1 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
             {profile.tagline}
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#contact"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
@@ -74,7 +77,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-5 flex flex-wrap gap-3">
             <div className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
               <Mail className="h-4 w-4 text-indigo-500" />
               <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-200">
@@ -97,7 +100,7 @@ export default function HeroSection() {
         >
           <div className="absolute -inset-2 rounded-[2.25rem] bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.25),transparent_55%)] blur-xl" />
 
-          <div className="relative rounded-[2.25rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
+          <div className="relative rounded-[2.25rem] border border-white/10 bg-white/5 p-5 backdrop-blur">
             <div className="flex items-center gap-4">
               <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-3xl ring-1 ring-white/10">
                 <Image
@@ -120,7 +123,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <Stat value="10+" label="Years in production delivery" />
               <Stat value="Azure" label="Cloud architecture & cost focus" />
               <Stat value=".NET" label=".NET Core • ASP.Net Web & Windows Forms" />
@@ -128,7 +131,7 @@ export default function HeroSection() {
             </div>
 
             <motion.div
-              className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4"
+              className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.08 }}
@@ -136,7 +139,7 @@ export default function HeroSection() {
               <div className="text-xs font-semibold text-indigo-700 dark:text-indigo-300">
                 Focus Areas
               </div>
-              <div className="mt-2 flex flex-wrap gap-2">
+              <div className="mt-1 flex flex-wrap gap-2">
                 {[
                   "Payroll & HR",
                   "CRM & Integrations",

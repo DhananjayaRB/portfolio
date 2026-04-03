@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <header
       className={[
-        "sticky top-0 z-50 border-b border-white/5",
+        "fixed left-0 right-0 top-0 z-50 border-b border-white/5",
         "bg-white/60 backdrop-blur dark:bg-black/60",
         scrolled ? "shadow-sm" : "",
       ].join(" ")}

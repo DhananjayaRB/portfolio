@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import { profile } from "@/data/portfolio";
+import { profile, profileImageSrc } from "@/data/portfolio";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${profile.name} | ${profile.title}`,
   description: profile.tagline,
   authors: [{ name: profile.name }],
@@ -23,6 +28,13 @@ export const metadata: Metadata = {
     title: `${profile.name} | ${profile.title}`,
     description: profile.tagline,
     type: "website",
+    images: [{ url: profileImageSrc, alt: `${profile.name} — profile photo` }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.name} | ${profile.title}`,
+    description: profile.tagline,
+    images: [profileImageSrc],
   },
 };
 

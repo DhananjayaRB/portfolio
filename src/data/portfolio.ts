@@ -24,8 +24,8 @@ export type TechItem = {
   short: string;
 };
 
-/** Served from `public/profile.png` (works on Vercel; do not use a local-only API path). */
-export const profileImageSrc = "/profile.png";
+/** Served from `public/profile-2026-v2.png` (versioned to bust caches across deploys). */
+export const profileImageSrc = "/profile-2026-v2.png";
 
 export const profile = {
   name: "Dhananjaya R B",
